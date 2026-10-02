@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: AOC_T-Rex
+  m_Controller: {fileID: 9100000, guid: a1dc0d7f23fbb8b498338a54e7a19419, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 35479c2df83bf924eb82a36208bbad25, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 9c70a666b5a8b744bb71a4f94d598c6f, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 8e4d08f724b876148b81136c222617fc, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 64a2c0de65d380047b6a4f2446e5eda9, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: eb1bc1aa7be9a2f489f96fdcc680c51e, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: dbc1d29a0cdc46943830dc7c71864aab, type: 2}

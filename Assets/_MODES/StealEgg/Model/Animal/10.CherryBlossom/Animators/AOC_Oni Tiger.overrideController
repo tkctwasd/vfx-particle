@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!221 &22100000
+AnimatorOverrideController:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: AOC_Oni Tiger
+  m_Controller: {fileID: 9100000, guid: a1dc0d7f23fbb8b498338a54e7a19419, type: 2}
+  m_Clips:
+  - m_OriginalClip: {fileID: 7400000, guid: 35479c2df83bf924eb82a36208bbad25, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 2cda3c78a3baa0343ba4285ac56d4588, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: eb1bc1aa7be9a2f489f96fdcc680c51e, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 2c013e3d6ba4fd94a8f7c196b9107e6e, type: 2}
+  - m_OriginalClip: {fileID: 7400000, guid: 8e4d08f724b876148b81136c222617fc, type: 2}
+    m_OverrideClip: {fileID: 7400000, guid: 2c013e3d6ba4fd94a8f7c196b9107e6e, type: 2}

@@ -1,0 +1,40 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31cbb7fedad0bd743bfdc0891255f00b, type: 3}
+  m_Name: HalloweenVfxLibrary
+  m_EditorClassIdentifier: Assembly-CSharp::HalloweenVfxLibrary
+  auras:
+  - rarity: 0
+    prefab: {fileID: 8718428272147722106, guid: 07e5800db1ab04c4f95ab0b01bb8f8e3, type: 3}
+  - rarity: 1
+    prefab: {fileID: 8533816887166559536, guid: 3b9c6cc62921521468e679269705d5ee, type: 3}
+  - rarity: 2
+    prefab: {fileID: 5282738860038503904, guid: fb2b6779059456045b14c6b50a2dde0f, type: 3}
+  - rarity: 3
+    prefab: {fileID: 3405504827410378056, guid: ac19d3bb9150ee24ea48387d4ab91e48, type: 3}
+  - rarity: 4
+    prefab: {fileID: 1463066195630724226, guid: 24e5df02b3873044e8d8bb4ce863b378, type: 3}
+  - rarity: 5
+    prefab: {fileID: 2270540698914571059, guid: a1844c0ebc874b148910faf361b5cc67, type: 3}
+  - rarity: 6
+    prefab: {fileID: 6604321170721507779, guid: 941afe6112ec499409c1edcbe3602191, type: 3}
+  - rarity: 7
+    prefab: {fileID: 5841091054390904110, guid: 2d8fb8ac7eb79b74c87d9c08bb21e320, type: 3}
+  - rarity: 8
+    prefab: {fileID: 45623219282560192, guid: 75687d8e58dc04a45827677babf9aaf7, type: 3}
+  - rarity: 9
+    prefab: {fileID: 5587641604124483222, guid: 51856b1ffdddb2145a9893feee93cb31, type: 3}
+  zones:
+  - {fileID: 7066014411499634757, guid: 5bc7750d428ba554ca09f590ba2f826c, type: 3}
+  - {fileID: 650303426163254784, guid: 6c77ce378889cfa45b6a1e090f5a441d, type: 3}
+  - {fileID: 1106934652219457025, guid: c16923721b7bb534a9ff867e792586e1, type: 3}
+  - {fileID: 216377967394767334, guid: edf5dc83bc02a60448e26e514982359a, type: 3}
