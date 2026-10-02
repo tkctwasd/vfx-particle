@@ -9,7 +9,7 @@ using PS = UnityEngine.ParticleSystem;
 
 // Dựng toàn bộ VFX Halloween: texture -> material -> layer prefab -> aura theo Rarity -> zone -> library -> demo scene
 // Mọi prefab dựng ở bán kính gốc 1 (footprint), HalloweenAura tự scale theo bounds của animal
-public static class HalloweenVfxBuilder
+public static partial class HalloweenVfxBuilder
 {
     const string Root = "Assets/_ROOT/VFX/Halloween";
     const string TexDir = Root + "/Textures";
@@ -283,20 +283,9 @@ public static class HalloweenVfxBuilder
 
     static void Vel(PS ps, float yMin, float yMax, float orbitMin = 0f, float orbitMax = 0f)
     {
+        VelXYZ(ps, Vector2.zero, new Vector2(yMin, yMax), Vector2.zero);
         var v = ps.velocityOverLifetime;
-        v.enabled = true;
-        v.space = ParticleSystemSimulationSpace.Local;
-        v.x = R(0f, 0f);
-        v.y = R(yMin, yMax);
-        v.z = R(0f, 0f);
-        // Orbital/offset/radial phải cùng mode (TwoConstants) nếu không Unity báo lỗi khi simulate
-        v.orbitalX = R(0f, 0f);
         v.orbitalY = R(orbitMin, orbitMax);
-        v.orbitalZ = R(0f, 0f);
-        v.orbitalOffsetX = R(0f, 0f);
-        v.orbitalOffsetY = R(0f, 0f);
-        v.orbitalOffsetZ = R(0f, 0f);
-        v.radial = R(0f, 0f);
     }
 
     static void Noise(PS ps, float strength, float freq)
@@ -432,12 +421,7 @@ public static class HalloweenVfxBuilder
         CircleXZ(ps, 1.3f, 0f);
         Vel(ps, -0.1f, 0.1f, 1f, 1.8f);
         Noise(ps, 0.5f, 0.4f);
-        var t = ps.textureSheetAnimation;
-        t.enabled = true;
-        t.numTilesX = 4;
-        t.numTilesY = 1;
-        t.frameOverTime = new PS.MinMaxCurve(1f, Crv(0f, 0f, 1f, 1f));
-        t.cycleCount = 10;
+        Flap(ps, 10);
         Fade(ps, c, c, 0f, 0f, 0.15f, 1f, 0.85f, 1f, 1f, 0f);
         Rate(ps, rate);
         return ps;
@@ -616,7 +600,7 @@ public static class HalloweenVfxBuilder
 
     static PS PumpkinRingStatic(Transform p, short count = 8)
     {
-        var ps = NewPS("PumpkinRing", p, mPumpkin, 0.2f, count);
+        var ps = NewPS("PumpkinRing", p, mPumpkin, 0.2f, count * 2);
         Permanent(ps, 6f, count);
         Main(ps, 6f, 6f, 0.38f, 0.38f);
         CircleXZ(ps, 1f, 0f, true);
@@ -688,12 +672,7 @@ public static class HalloweenVfxBuilder
     static PS BatBurst(Transform p, short count)
     {
         var ps = BurstChild(p, "BatBurst", mBat, BatDark, count, 0.3f, 0.45f, 3f, 5f, -0.2f, 1.4f);
-        var t = ps.textureSheetAnimation;
-        t.enabled = true;
-        t.numTilesX = 4;
-        t.numTilesY = 1;
-        t.frameOverTime = new PS.MinMaxCurve(1f, Crv(0f, 0f, 1f, 1f));
-        t.cycleCount = 6;
+        Flap(ps, 6);
         return ps;
     }
 

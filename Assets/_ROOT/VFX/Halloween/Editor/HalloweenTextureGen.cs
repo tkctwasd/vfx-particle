@@ -276,6 +276,35 @@ public static class HalloweenTextureGen
         return new Color(c.r * shade, c.g * shade, c.b * shade, 1);
     }, 3);
 
+    public static Texture2D Moon(string path)
+    {
+        (Vector2 c, float r)[] craters =
+        {
+            (new Vector2(-0.3f, 0.2f), 0.18f), (new Vector2(0.25f, -0.3f), 0.22f),
+            (new Vector2(0.38f, 0.35f), 0.1f), (new Vector2(-0.1f, -0.5f), 0.08f), (new Vector2(-0.45f, -0.2f), 0.07f)
+        };
+        return Make(path, 256, 256, 1, 1, (t, p) =>
+        {
+            float r = p.magnitude;
+            if (r > 0.9f) return new Color(1, 1, 1, 0);
+            float shade = 0.85f + 0.15f * Mathf.Sqrt(Sat(1f - (r / 0.9f) * (r / 0.9f)));
+            foreach (var cr in craters)
+            {
+                float d = (p - cr.c).magnitude / cr.r;
+                if (d < 1f) shade *= d > 0.8f ? 1.05f : 0.82f;
+            }
+            return new Color(1f * shade, 0.96f * shade, 0.84f * shade, 1f);
+        }, 3);
+    }
+
+    public static Texture2D Petal(string path) => Make(path, 128, 128, 1, 1, (t, p) =>
+    {
+        bool inside = InEllipse(p, new Vector2(0, -0.05f), new Vector2(0.5f, 0.85f)) && (p - new Vector2(0, 0.95f)).magnitude > 0.25f;
+        if (!inside) return new Color(1, 1, 1, 0);
+        float k = Sat((p.y + 0.9f) / 1.8f);
+        return new Color(1f, Mathf.Lerp(0.75f, 0.95f, k), Mathf.Lerp(0.88f, 1f, k), 1f);
+    }, 3);
+
     public static Texture2D RuneCircle(string path)
     {
         var rnd = new System.Random(7);
