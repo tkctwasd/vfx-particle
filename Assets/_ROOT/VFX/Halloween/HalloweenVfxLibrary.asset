@@ -33,8 +33,48 @@ MonoBehaviour:
     prefab: {fileID: 45623219282560192, guid: 75687d8e58dc04a45827677babf9aaf7, type: 3}
   - rarity: 9
     prefab: {fileID: 5587641604124483222, guid: 51856b1ffdddb2145a9893feee93cb31, type: 3}
+  accents:
+  - biome: 0
+    prefab: {fileID: 8816748832589074301, guid: 5fd3e220056091640b4d0fe9c58c6139, type: 3}
+  - biome: 1
+    prefab: {fileID: 264694676908871486, guid: dd019e2124daf01408b7679e86f92c3f, type: 3}
+  - biome: 2
+    prefab: {fileID: 6822314377714485180, guid: c5c169db0e26b0342a83fa4c03ca69d8, type: 3}
+  - biome: 3
+    prefab: {fileID: 1256283411762201129, guid: 7c1d2c3f17c0dd94e8a5a31af57fd5d1, type: 3}
+  - biome: 4
+    prefab: {fileID: 8401221204298192838, guid: 46bc6685d81fe684b9743433b0ebd6e1, type: 3}
+  - biome: 5
+    prefab: {fileID: 7732554682363020621, guid: db09cd40503b36f419dcb2cc3b894d9d, type: 3}
+  - biome: 6
+    prefab: {fileID: 3734454021702237362, guid: 353fa8487c2aa1745b3cb7f9a748b6dd, type: 3}
+  - biome: 7
+    prefab: {fileID: 4003932483298524254, guid: 56c07239df7457245a8b7518e8060fce, type: 3}
+  - biome: 8
+    prefab: {fileID: 8840025502364307401, guid: 1770c54d420a36344914af854193d207, type: 3}
+  - biome: 9
+    prefab: {fileID: 1789899582544512576, guid: 676fabffc3e120f46a1e2d066cb91806, type: 3}
+  - biome: 10
+    prefab: {fileID: 4726878951287385313, guid: 911b557b712499748a6a81ef58e22d68, type: 3}
+  - biome: 11
+    prefab: {fileID: 2891613371456170082, guid: aca77f6390d3fe941b3a077fd32a8d7b, type: 3}
+  - biome: 12
+    prefab: {fileID: 5041395708922450776, guid: 00dcb0aee6b82994c90d2f0a921e137a, type: 3}
+  - biome: 13
+    prefab: {fileID: 8292080009557277051, guid: 19d8c41d480d2734c8fd4db24cd6b2f1, type: 3}
   zones:
   - {fileID: 7066014411499634757, guid: 5bc7750d428ba554ca09f590ba2f826c, type: 3}
   - {fileID: 650303426163254784, guid: 6c77ce378889cfa45b6a1e090f5a441d, type: 3}
   - {fileID: 1106934652219457025, guid: c16923721b7bb534a9ff867e792586e1, type: 3}
   - {fileID: 216377967394767334, guid: edf5dc83bc02a60448e26e514982359a, type: 3}
+  accentDensityByRarity:
+  - 0.35
+  - 0.45
+  - 0.55
+  - 0.65
+  - 0.72
+  - 0.8
+  - 0.8
+  - 0.86
+  - 0.93
+  - 1

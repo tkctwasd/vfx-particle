@@ -48,7 +48,7 @@ public static partial class HalloweenVfxBuilder
     [MenuItem("Tools/Halloween VFX/Build Assets (no scene)")]
     public static void BuildAssets()
     {
-        foreach (var d in new[] { TexDir, MatDir, LayerDir, AuraDir, ZoneDir, DemoDir }) Directory.CreateDirectory(d);
+        foreach (var d in new[] { TexDir, MatDir, LayerDir, AuraDir, AccentDir, ZoneDir, DemoDir }) Directory.CreateDirectory(d);
         try
         {
             EditorUtility.DisplayProgressBar("Halloween VFX", "Textures", 0.1f);
@@ -57,9 +57,11 @@ public static partial class HalloweenVfxBuilder
             BuildLayerPrefabs();
             EditorUtility.DisplayProgressBar("Halloween VFX", "Auras", 0.7f);
             var auras = BuildAuraPrefabs();
-            EditorUtility.DisplayProgressBar("Halloween VFX", "Zones", 0.85f);
+            EditorUtility.DisplayProgressBar("Halloween VFX", "Biome accents", 0.8f);
+            var accents = BuildBiomeAccentPrefabs();
+            EditorUtility.DisplayProgressBar("Halloween VFX", "Zones", 0.9f);
             var zones = BuildZonePrefabs();
-            BuildLibrary(auras, zones);
+            BuildLibrary(auras, zones, accents);
             AssetDatabase.SaveAssets();
         }
         finally { EditorUtility.ClearProgressBar(); }
@@ -802,7 +804,8 @@ public static partial class HalloweenVfxBuilder
         return prefab.GetComponent<HalloweenZone>();
     }
 
-    static void BuildLibrary(List<HalloweenVfxLibrary.AuraEntry> auras, List<HalloweenZone> zones)
+    static void BuildLibrary(List<HalloweenVfxLibrary.AuraEntry> auras, List<HalloweenZone> zones,
+                             List<HalloweenVfxLibrary.AccentEntry> accents)
     {
         string path = $"{Root}/HalloweenVfxLibrary.asset";
         var lib = AssetDatabase.LoadAssetAtPath<HalloweenVfxLibrary>(path);
@@ -811,7 +814,7 @@ public static partial class HalloweenVfxBuilder
             lib = ScriptableObject.CreateInstance<HalloweenVfxLibrary>();
             AssetDatabase.CreateAsset(lib, path);
         }
-        lib.EditorSetup(auras, zones);
+        lib.EditorSetup(auras, zones, accents);
         EditorUtility.SetDirty(lib);
     }
 
